@@ -2,6 +2,7 @@
 # LRM.pack.1.0.0
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/xcAsh99/LRM.pack.1.0.0/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/xcAsh99/LRM.pack.1.0.0/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 LRM.pack.1.0.0 provide a function to do linear regression modeling through R.
