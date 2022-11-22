@@ -1,0 +1,50 @@
+---
+title: "tutorial"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{tutorial}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  echo=TRUE,
+  collapse = TRUE,
+  comment = "#>"
+  )
+
+```
+
+```{r setup}
+library(LRM.pack.1.0.0)
+```
+
+To use the function "Lmr":
+
+```{r}
+x <- cbind(rnorm(26,1,0.5),rnorm(26,5,3))
+y <- rnorm(26,1,0.5)
+Lmr(x,y)
+
+x <- cbind(rnorm(10,14,9),rnorm(10,3,1),rnorm(10,1,1),rnorm(10,0,2))
+y <- rnorm(10,10,5)
+Lmr(x,y)
+```
+Sample dataset for the Lmr() funtion
+```{r}
+dat <- trees
+```
+
+Precision and efficiency comparison of Lmr() function and lm() function.
+```{r}
+X <- cbind(dat$Girth,dat$Height)
+Y <- as.matrix(dat$Volume)
+lm_result <- as.vector(lm(Y~X)$coefficient)
+Lmr_result <- as.vector(Lmr(X,Y))
+all.equal(lm_result,Lmr_result)
+bench::mark(lm_result,Lmr_result)
+```
+
+
+

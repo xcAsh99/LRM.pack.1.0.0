@@ -1,0 +1,15 @@
+test_that("multiplication works", {
+  set.seed(999)
+  x1 <- rnorm(30,1,5) + 0.3 *(1:30)
+  x2 <- rnorm(30,1,4)
+  x3 <- rnorm(30,4,2)
+  Y  <- c(rnorm(10,5,5),rnorm(10,1,1),rnorm(10,0.5,0.1))
+  expect_equal(as.vector(Lmr(cbind(x1 ),Y)),as.vector(lm(Y~x1 )$coefficient))
+  expect_equal(as.vector(Lmr(cbind(x1,x2),Y)),as.vector(lm(Y~x1+x2)$coefficient))
+  expect_equal(as.vector(Lmr(cbind(x1,x3),Y)),as.vector(lm(Y~x1+x3)$coefficient))
+  expect_equal(as.vector(Lmr(cbind(x3,x2),Y)),as.vector(lm(Y~x3+x2)$coefficient))
+  expect_equal(as.vector(Lmr(cbind(x1,x2,x3),Y)),as.vector(lm(Y~x1+x2+x3)$coefficient))
+  x <- as.matrix(mtcars[,2:7])
+  expect_equal(as.vector(Lmr(x,mtcars$mpg)),as.vector(lm(mtcars$mpg~mtcars$cyl+mtcars$disp+mtcars$hp+mtcars$drat+mtcars$wt+mtcars$qsec)$coefficient))
+
+})
