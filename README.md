@@ -3,6 +3,7 @@
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/xcAsh99/LRM.pack.1.0.0/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/xcAsh99/LRM.pack.1.0.0/actions/workflows/R-CMD-check.yaml)
+[![Codecov test coverage](https://codecov.io/gh/xcAsh99/LRM.pack.1.0.0/branch/master/graph/badge.svg)](https://app.codecov.io/gh/xcAsh99/LRM.pack.1.0.0?branch=master)
 <!-- badges: end -->
 
 LRM.pack.1.0.0 provide a function to do linear regression modeling through R.
