@@ -27,6 +27,8 @@ function and datasets.
 
 ## Example
 
+``` r
+library(LRM.pack.1.0.0)
 x <- cbind(rnorm(26,1,0.5),rnorm(26,5,3))
 y <- rnorm(26,1,0.5)
 Lmr(x,y)
@@ -34,10 +36,5 @@ Lmr(x,y)
 x <- matrix(c(1,2,3,4,5,6),2,3)
 y <- c(4,9)
 Lmr(x,y)
-
-
-``` r
-library(LRM.pack.1.0.0)
-## basic example code
 ```
 
